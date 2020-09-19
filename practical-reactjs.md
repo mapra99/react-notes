@@ -82,3 +82,34 @@ export default Presentational;
 ```
 
 ## Props
+In a similar way as functions receive arguments, components receive props. Those are read-only values that can be transferred to the component when it is being called.
+
+## Component's Lifecycle
+All react components go through a process of specific events where some methods are called.
+
+### Mounting
+Here the component is created along with the logic, and it gets inserted in the DOM. This is the order at which the methods are being called:
+
+- `constructor()`, which intializes the controllers methods, state events.
+- `getDerivedStateFromProps()`, which is called before inserting the component to the DOM, and there we can update the internal state in response to a property change. It's not recomended to use this method.
+- `render()`, which is called to read the html related to the component and insert it to the DOM.
+- `componentDidMount()`, is kind of a callback that can be used to execute additional actions on the component after all the mounting has been completed.
+
+### Updating
+Here the component is listening for changes, which may come from the `state` or from the `props`.
+
+- `getDerivedStateFromProps()` works in the same way as mounting.
+- `shouldComponentUpdate()` works as a callback to manually decide wether the component should update or not. It's useful for optimization.
+- `render()` works the same way as mounting.
+- `componentDidUpdate()` is a callback that is called after the update finished.
+
+### Unmounting
+Here the component dies when it is no longer needed on the DOM.
+
+- `componentWillUnmount()` is a callback before the component is unmounted.
+
+### Error Handling
+When an error is thrown, the component will start this phase, made to get details on the error.
+
+- `getDerivedStateFromError()`
+- `componentDidCatch()`
