@@ -113,3 +113,6 @@ When an error is thrown, the component will start this phase, made to get detail
 
 - `getDerivedStateFromError()`
 - `componentDidCatch()`
+
+## A State
+A state is an object inside the compoentn, which contains variables and can be accessed inside the compoennt.
