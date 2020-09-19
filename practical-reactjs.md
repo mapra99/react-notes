@@ -116,3 +116,14 @@ When an error is thrown, the component will start this phase, made to get detail
 
 ## A State
 A state is an object inside the compoentn, which contains variables and can be accessed inside the compoennt.
+
+## Implementing a professional environment
+
+### Babel
+Babel is used to provide browser support for JS. It takes all the React components and translates them into an ES version that all browsers support.
+To install Babel:
+```bash
+npm install @babel/core babel-loader @babel/preset-env @babel/preset-react
+```
+
+Then all Babel configuration can be added in a file called `.babelrc`
