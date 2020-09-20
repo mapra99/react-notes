@@ -11,20 +11,23 @@ const App = () => (
   <div className='app'>
     <Header />
     <Search />
-    <Category>
+    <Category title='Mi lista'>
+      <Carousel>
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+      </Carousel>
+    </Category>
+    <Category title='Tendencias'>
       <Carousel>
         <CarouselItem />
         <CarouselItem />
       </Carousel>
     </Category>
-    <Category>
+    <Category title='Originales de Platzi Video'>
       <Carousel>
         <CarouselItem />
         <CarouselItem />
-      </Carousel>
-    </Category>
-    <Category>
-      <Carousel>
         <CarouselItem />
         <CarouselItem />
       </Carousel>
