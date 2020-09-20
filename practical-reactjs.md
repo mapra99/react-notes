@@ -282,3 +282,9 @@ In the webpack config file, addin a new rule:
   ],
 },
 ```
+
+## React Hooks
+React Hooks was conceived to provide a state and lifecycle to stateless components. The reason of this is that it makes less complicated to use hooks with stateless components, rather that using directly stateful components.
+Two functionalities are important:
+- useState: to manage the state.
+- useEffect: to manage the transmissions.
