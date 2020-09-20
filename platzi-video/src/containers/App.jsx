@@ -5,6 +5,7 @@ import Search from '../components/Search';
 import Category from '../components/Category';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
+import Footer from '../components/Footer';
 
 const App = () => (
   <div className='app'>
@@ -19,6 +20,7 @@ const App = () => (
         <CarouselItem />
       </Carousel>
     </Category>
+    <Footer />
   </div>
 );
 
