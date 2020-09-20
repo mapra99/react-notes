@@ -167,7 +167,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        user: [
+        use: [
           {
             loader: 'html-loader',
           },
@@ -182,4 +182,21 @@ module.exports = {
     }),
   ],
 };
+```
+
+The bundle can be compiled using the command
+```bash
+webpack --mode production
+```
+
+Webpack also has another tool: Webpack Dev Server, which can be used to run a development server that watches for changes in the project and updates the browser view automatically.
+
+Installation
+```bash
+npm install webpack-dev-server --save-dev
+```
+
+The dev server can be run using the command
+```bash
+webpack-dev-server --open --mode development
 ```
