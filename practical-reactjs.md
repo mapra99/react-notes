@@ -288,3 +288,8 @@ React Hooks was conceived to provide a state and lifecycle to stateless componen
 Two functionalities are important:
 - useState: to manage the state.
 - useEffect: to manage the transmissions.
+
+## PropTypes
+```shell
+npm install prop-types
+```
