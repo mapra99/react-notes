@@ -255,3 +255,9 @@ module.exports = {
 }
 //...
 ```
+
+### ESLint
+
+```bash
+npm install eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y --save-dev
+```
