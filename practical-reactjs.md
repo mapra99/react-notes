@@ -123,7 +123,63 @@ A state is an object inside the compoentn, which contains variables and can be a
 Babel is used to provide browser support for JS. It takes all the React components and translates them into an ES version that all browsers support.
 To install Babel:
 ```bash
-npm install @babel/core babel-loader @babel/preset-env @babel/preset-react
+npm install @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
 ```
 
 Then all Babel configuration can be added in a file called `.babelrc`
+```javascript
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
+}
+```
+
+### Webpack
+Webpack is a tool that takes care of managing all the assets (js, html, css, multimedia) having them ready for production.
+To install Webpack:
+```bash
+npm install webpack webpack-cli html-webpack-plugin html-loader --save-dev
+```
+All webpack configuration can be added in a file called `webpack.config.js`
+```javascript
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.html$/,
+        user: [
+          {
+            loader: 'html-loader',
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      filename: './index.html',
+    }),
+  ],
+};
+```
