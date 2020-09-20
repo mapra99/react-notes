@@ -261,3 +261,24 @@ module.exports = {
 ```bash
 npm install eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y --save-dev
 ```
+
+### Images
+
+```bash
+npm install file-loader --save-dev
+```
+
+In the webpack config file, addin a new rule:
+```javascript
+{
+  test: /\.(png|gif|jpg|jpeg)/,
+  use: [
+    {
+      loader: 'file-loader',
+      options: {
+        name: 'assets/[hash].[ext]',
+      },
+    },
+  ],
+},
+```
