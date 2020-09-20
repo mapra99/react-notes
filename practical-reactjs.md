@@ -200,3 +200,58 @@ The dev server can be run using the command
 ```bash
 webpack-dev-server --open --mode development
 ```
+
+### SASS
+Using SASS as a CSS pre-processor and making it work with Webpack.
+Installation:
+```bash
+npm install mini-css-extract-plugin css-loader node-sass sass-loader --save-dev
+```
+
+- `css-loader`, `node-sass` and `sass-loader` are webpack loaders that compile sass files and return css styles. These styles are inserted into the JS bundle when called with `import`.
+- `mini-css-extract-plugin` takes this generated CSS and saves it in a separate CSS file.
+
+In the `webpack.config.js` file:
+1. Require the plugin
+```javascript
+//...
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//...
+```
+
+2. Add the rule
+```javascript
+//...
+module.exports = {
+  //...
+  module: {
+    rules: [
+      {
+        test: /\.(s*)css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'sass-loader',
+        ],
+      }
+    ]
+  }
+}
+//...
+```
+
+3. Pass the plugin config params
+```javascript
+//...
+module.exports = {
+  //...
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'assets/[name].css',
+    }),
+  ]
+}
+//...
+```
