@@ -6,9 +6,4 @@ import './global.css';
 import BadgeNew from './pages/BadgeNew';
 
 const container = document.getElementById('app');
-ReactDOM.render(<BadgeNew
-                  firstName="Miguel" 
-                  lastName="Prada" 
-                  jobTitle="Frontend Engineer" 
-                  twitterHandle="MiguelPrada1" 
-                  avatarUrl="https://www.gravatar.com/avatar/"/>, container);
+ReactDOM.render(<BadgeNew />, container);
