@@ -37,3 +37,11 @@ const element = <h1>Hello, World</h1>;
 const container = document.getElementById('app');
 ReactDOM.render(element, container);
 ```
+
+## Creation and design of components
+### What's a component
+A component is the React's minimal unit of work to constitute the whole app.
+- A component is a class or function definition of the elements that constitute the website.
+- An element is an instane of a component, which is being rendered in the browser.
+
+When given a design, the first thing to do is to think of how to split everything into components. As a rule of thumb, two elements of the design can be brought into a same components if they are visually or logically similar.
