@@ -9,11 +9,11 @@ import BadgeForm from '../components/BadgeForm';
 class BadgeNew extends React.Component {
   state = {
     form: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      jobTitle: '',
-      twitterHandle: ''
+      firstName: 'Awesome',
+      lastName: 'Dev',
+      email: 'myemail@gmail.com',
+      jobTitle: 'Software Developer',
+      twitterHandle: 'awesome-dev'
     }
   };
 
