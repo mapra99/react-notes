@@ -2,8 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Menu from './Menu';
 import Usuarios from './usuarios/index';
-
-const Tareas = () => (<div>HOLA</div>)
+import Tareas from './tareas/index';
 
 const App = () => (
   <BrowserRouter>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import * as UsuariosActions from '../../actions/UsuariosActions';
+import UsuariosActions from '../../actions/UsuariosActions';
 
 class Usuarios extends Component {
   componentDidMount() {
