@@ -1,13 +1,20 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import '../../css/icons.css';
 
 const Tabla = ({ usuarios }) => {
   const ponerFilas = () => [
-    usuarios.map(usuario => (
+    usuarios.map((usuario) => (
       <tr key={usuario.id}>
         <td>{usuario.name}</td>
         <td>{usuario.email}</td>
         <td>{usuario.website}</td>
+        <td>
+          <Link to={`/publicaciones/${usuario.id}`}>
+            <div className="eye-solid icon"></div>
+          </Link>
+        </td>
       </tr>
     ))
   ]

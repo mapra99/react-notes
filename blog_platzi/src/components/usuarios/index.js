@@ -7,7 +7,9 @@ import Fatal from '../Fatal'
 
 class Usuarios extends Component {
   componentDidMount() {
-    this.props.traerDatos();
+    if (!this.props.usuarios.length) {
+      this.props.traerDatos();
+    }
   }
 
   ponerContenido = () => {
