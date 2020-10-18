@@ -5,17 +5,18 @@ import UsuariosActions from '../../actions/UsuariosActions';
 import PublicacionesActions from '../../actions/PublicacionesActions';
 
 const {traerDatos: traerDatosUsuarios} = UsuariosActions;
-const {traerDatos: traerDatosPublicaciones} = PublicacionesActions;
+const {traerPorUsuario: traerPublicacionesPorUsuario} = PublicacionesActions;
 
 class Publicaciones extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     if (!this.props.usuariosReducer.usuarios.length) {
-      this.props.traerDatosUsuarios();
+      await this.props.traerDatosUsuarios();
     }
+    this.props.traerPublicacionesPorUsuario(this.props.match.params.usuario_id);
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.publicacionesReducer.publicaciones);
     return (
       <div>
         PUBLICACIONES DE USUARIO {this.props.match.params.usuario_id}
@@ -33,7 +34,7 @@ const mapStateToProps = ({usuariosReducer, publicacionesReducer}) => {
 
 const mapDispatchToProps = {
   traerDatosUsuarios,
-  traerDatosPublicaciones
+  traerPublicacionesPorUsuario
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Publicaciones);
