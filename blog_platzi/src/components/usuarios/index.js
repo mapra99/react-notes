@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import UsuariosActions from '../../actions/UsuariosActions';
+import Tabla from './Tabla';
 import Spinner from '../Spinner';
 import Fatal from '../Fatal'
 
@@ -18,35 +19,13 @@ class Usuarios extends Component {
       return <Fatal errorMessage={this.props.error.message} />;
     }
 
-    return (
-      <table className="tabla">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>URL</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.ponerFilas()}
-        </tbody>
-      </table>
-    )
+    return <Tabla />
   }
-  
-  ponerFilas = () => [
-    this.props.usuarios.map(usuario => (
-      <tr key={usuario.id}>
-        <td>{usuario.name}</td>
-        <td>{usuario.email}</td>
-        <td>{usuario.website}</td>
-      </tr>
-    ))
-  ]
 
   render() {
     return (
       <div>
+        <h1>Usuarios</h1>
         {this.ponerContenido()}
       </div>
     )
