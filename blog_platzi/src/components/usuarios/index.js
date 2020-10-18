@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import UsuariosActions from '../../actions/UsuariosActions';
 import Spinner from '../Spinner';
+import Fatal from '../Fatal'
 
 class Usuarios extends Component {
   componentDidMount() {
@@ -11,6 +12,10 @@ class Usuarios extends Component {
   ponerContenido = () => {
     if (this.props.cargando) {
       return (<Spinner />)
+    }
+
+    if (this.props.error) {
+      return <Fatal errorMessage={this.props.error.message} />;
     }
 
     return (
