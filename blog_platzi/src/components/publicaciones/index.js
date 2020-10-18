@@ -2,16 +2,20 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
 import UsuariosActions from '../../actions/UsuariosActions';
+import PublicacionesActions from '../../actions/PublicacionesActions';
+
+const {traerDatos: traerDatosUsuarios} = UsuariosActions;
+const {traerDatos: traerDatosPublicaciones} = PublicacionesActions;
 
 class Publicaciones extends Component {
   componentDidMount() {
-    if (!this.props.usuarios.length) {
-      this.props.traerDatos();
+    if (!this.props.usuariosReducer.usuarios.length) {
+      this.props.traerDatosUsuarios();
     }
   }
 
   render() {
-    console.log(this.props.usuarios);
+    console.log(this.props);
     return (
       <div>
         PUBLICACIONES DE USUARIO {this.props.match.params.usuario_id}
@@ -20,8 +24,16 @@ class Publicaciones extends Component {
   }
 }
 
-const mapStateToProps = (reducers) => {
-  return reducers.usuariosReducer;
+const mapStateToProps = ({usuariosReducer, publicacionesReducer}) => {
+  return {
+    usuariosReducer,
+    publicacionesReducer
+  };
 };
 
-export default connect(mapStateToProps, UsuariosActions)(Publicaciones);
+const mapDispatchToProps = {
+  traerDatosUsuarios,
+  traerDatosPublicaciones
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Publicaciones);
