@@ -1,4 +1,9 @@
-import {TRAER_PUBLICACIONES, CARGANDO_PUBLICACIONES, ERROR_CARGANDO_PUBLICACIONES, RESET_PUBLICACIONES} from '../types/PublicacionesTypes';
+import {
+  TRAER_PUBLICACIONES,
+  CARGANDO_PUBLICACIONES,
+  ERROR_CARGANDO_PUBLICACIONES,
+  RESET_PUBLICACIONES 
+} from '../types/PublicacionesTypes';
 
 const INITIAL_STATE = {
   publicaciones: [],
@@ -15,10 +20,13 @@ export default (state = INITIAL_STATE, action) => {
         cargando: false, 
         error: false
       };
+
     case CARGANDO_PUBLICACIONES:
       return { ...state, cargando: true};
+
     case ERROR_CARGANDO_PUBLICACIONES:
-      return { ...state, error: action.payload, cargando: false }
+      return { ...state, error: action.payload, cargando: false };
+
     default:
       return state;
   }

@@ -25,6 +25,7 @@ class Usuarios extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <h1>Usuarios</h1>
